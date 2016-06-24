@@ -16,14 +16,14 @@ class Repository(models.Model):
 
 
 def post_save_repository(sender, instance, *args, **kwargs):
-    from gitdjan.settings import BASE_DIR
-    path = BASE_DIR+'/../gits/%s'%instance.name
+    from gitdjan.settings import GITS_DIR
+    path = GITS_DIR + instance.name
     init_repository(path, bare=True)
 
 def post_delete_repository(sender, instance, *args, **kwargs):
     from shutil import rmtree
-    from gitdjan.settings import BASE_DIR
-    path = BASE_DIR+'/../gits/%s/'%instance.name
+    from gitdjan.settings import GITS_DIR
+    path = GITS_DIR + instance.name
     try:
         rmtree(path)
     except:

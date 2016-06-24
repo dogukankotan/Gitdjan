@@ -7,6 +7,7 @@ from .forms import CreateRepo, Login
 from repos.models import Repository
 
 from func import *
+from settings import GITS_DIR
 from socket import gethostbyname, gethostname
 from os import getcwd
 
@@ -60,7 +61,7 @@ def repositoryG(request, repoName):
 
     context = {}
     try:
-        repo = git.Repository('gits/%s' % repoName)
+        repo = git.Repository(GITS_DIR + repoName)
         repoDesc = Repository.objects.get(name=repoName).description
         try:
             head = repo.revparse_single('HEAD')
@@ -83,7 +84,7 @@ def blobG(request, repoName, blob):
         return HttpResponseRedirect('/login')
 
     if blob:
-        repo = git.Repository('gits/%s' % repoName)
+        repo = git.Repository(GITS_DIR + repoName)
         head = repo.revparse_single('HEAD')
         tree = head.tree
         if tree[blob].type == 'tree':
@@ -107,7 +108,7 @@ def treeG(request, repoName, treeName):
     except:
         return HttpResponseRedirect('/login')
 
-    repo = git.Repository('gits/%s' % repoName)
+    repo = git.Repository(GITS_DIR + repoName)
     head = repo.revparse_single('HEAD')
     tree = head.tree[treeName]
     tree = repo.get(tree.id)
