@@ -16,7 +16,7 @@ Web Interface to own git server with django
 
 
 #### Login Page
-Username and password in ``settings/__init__.py`` as LOGIN_USERNAME and LOGIN_PASSWORD
+Username and password in ``settings/__init__.py`` as ``LOGIN_USERNAME`` and ``LOGIN_PASSWORD``
 
 <br />
 .developing ;)<br />
