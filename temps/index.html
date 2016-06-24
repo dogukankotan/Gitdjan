@@ -9,7 +9,7 @@
 <form method="post" action="">
     {% csrf_token %}
     {{ createf.as_p }}
-    <input type="submit" value="Oluştur">
+    <input type="submit" value="Create">
 </form>
 
 <br><br>
@@ -22,7 +22,7 @@
 {% endfor %}
 
 <br><br>
-<a href="/logout">Çıkış</a>
+<a href="/logout">Logout</a>
 
 </body>
 </html>
