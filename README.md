@@ -8,8 +8,8 @@ Web Interface to own git server with django
 
 #### Installation
 - libgit2 installation:
-- - ubuntu/debian: ``apt-get install libgit2-dev``
-- - arch: ``pacman -S libgit2``
+ - - ubuntu/debian: ``apt-get install libgit2-dev``
+ - - arch: ``pacman -S libgit2``
 - ``pip install -r requirements.txt``
 
 <br />
