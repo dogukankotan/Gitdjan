@@ -61,13 +61,14 @@ def repositoryG(request, repoName):
     context = {}
     try:
         repo = git.Repository('gits/%s' % repoName)
+        repoDesc = Repository.objects.get(name=repoName).description
         try:
             head = repo.revparse_single('HEAD')
         except:
             return HttpResponse("Repository is empty.")
         tree = head.tree
 
-        context = {"tree": tree, "repo": repoName}
+        context = {"tree": tree, "repoName": repoName, "repoDesc": repoDesc}
         return render(request, temp, context)
     except:
         return HttpResponse("Does not exists.")

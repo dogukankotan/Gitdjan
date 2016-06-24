@@ -5,9 +5,11 @@
     <title>Repository Files</title>
 </head>
 <body>
+<h1>{{ repoName }}</h1>
+<i><h3>{{ repoDesc }}</h3></i>
 
 {% for obj in tree %}
-    <a href="/{{ repo }}/{{ obj.type }}/{{ obj.name }}">{{ obj.name }}</a>
+    <a href="/{{ repoName }}/{{ obj.type }}/{{ obj.name }}">{{ obj.name }}</a>
     <br>
 {% endfor %}
 
