@@ -1,0 +1,5 @@
+cffi==1.7.0
+Django==1.9.7
+pycparser==2.14
+pygit2==0.24.1
+six==1.10.0

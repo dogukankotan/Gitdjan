@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gitdjan | Homepage</title>
+</head>
+<body>
+
+<form method="post" action="">
+    {% csrf_token %}
+    {{ createf.as_p }}
+    <input type="submit" value="Oluştur">
+</form>
+
+<br><br>
+<b>{{ response|safe }}</b>
+
+<br><br>
+<b>Your Repositories:<br></b>
+{% for repo in repos %}
+<a href="/{{ repo.name }}">{{ repo.name }}</a><br>
+{% endfor %}
+
+</body>
+</html>
