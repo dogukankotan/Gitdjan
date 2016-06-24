@@ -15,11 +15,12 @@ Web Interface to own git server with django
 - ``sudo pip install -r requirements.txt``
 
 #### Variables
-|       VARIABLE     | DEFAULT                |
-|-------------------:|:-----------------------|
-| LOGIN_USERNAME     | 0r1gamic               |
-| LOGIN_PASSWORD     | gitdjango123           |
-| GITS_DIR           | gits/                  |
+| VARIABLE           | DEFAULT                | DESCRIPTION          |
+|-------------------:|:-----------------------|:---------------------|
+| LOGIN_USERNAME     | 0r1gamic               | Login username       |
+| LOGIN_PASSWORD     | gitdjango123           | Login password       |
+| LOGIN_URL          | /login                 | Login url            |
+| GITS_DIR           | gits/                  | Repository directory |
 
 <br />
 .developing still ;)<br />
