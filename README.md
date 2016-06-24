@@ -22,6 +22,9 @@ Web Interface to own git server with django
 | LOGIN_URL          | /login                 | Login url            |
 | GITS_DIR           | gits/                  | Repository directory |
 
+#### Screenshot
+![screenshot](screen.png)
+
 <br />
 .developing still ;)<br />
 or1gamic developerZ - [ahmetkotan.com.tr][1]
