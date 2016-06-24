@@ -2,6 +2,14 @@
 
 from re import escape
 
+def login_check(req, cont):
+    try:
+        lCheck = req.session.get('login')
+    except:
+        lCheck = 0
+
+    cont['login'] = lCheck
+    return cont
 
 def name_check(name):
     namex = escape(name)

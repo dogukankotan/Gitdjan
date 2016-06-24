@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gitdjan | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="head-bar">
+    <div class="logo"><a href="/" >Gitdjan</a></div>
+    <div class="menu">
+        <a href="/">Homepage</a>
+        {% if login == 1 %}<a href="/create">Create Repository</a>{% endif %}
+        {% if login == 1 %}{% block extraMenu %}{% endblock %}{% endif %}
+        {% if login == 1 %}<a href="/logout">Logout</a>{% endif %}
+        {% if login == 0 or login == None %}<a href="/login">Login</a>{% endif %}
+    </div>
+</div>
+
+<div class="content-area">
+{% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Repository Files</title>
-</head>
-<body>
-<h1>{{ repoName }}</h1>
-<i><h3>{{ repoDesc }}</h3></i>
+{% extends 'base.html' %}
 
-{% for obj in tree %}
-    <a href="/{{ repoName }}/{{ obj.type }}/{{ obj.name }}">{{ obj.name }}</a>
-    <br>
-{% endfor %}
+{% block title %}{{ repoName }}{% endblock %}
 
+{% block extraMenu %}<a href="settings/" class="extra-menu">Repository Settings</a>{% endblock %}
 
-</body>
-</html>
+{% block content %}
+
+    <div class="repository-name">{{ repoName }}</div>
+    <div class="repository-desc">{{ repoDesc }}</div>
+
+    <div class="object-list">
+        {% for obj in tree %}
+            <div class="object-tab"><a href="/{{ repoName }}/{{ obj.type }}/{{ obj.name }}">{{ obj.name }}{% if obj.type == 'tree' %}/{% endif %}</a></div>
+        {% endfor %}
+    </div>
+{% endblock %}

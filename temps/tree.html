@@ -1,13 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Tree</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}{{ repo }} | {{ name }}{% endblock %}
+{% block extraMenu %}<a href="/{{ repoName }}/settings/" class="extra-menu">Repository Settings</a>{% endblock %}
+
+{% block content %}
+    <a href="/{{ repoName }}"><div class="repository-name">{{ repoName }}</div></a>
+    <div class="repository-desc">{{ repoDesc }}</div>
+
+    <div class="repository-path">{% for directory, url in repoPath.items %}
+        {% if not forloop.last %}<a href="/{{ repoName }}/tree/{{ url }}">{{ directory }}</a>/
+        {% else %}<b>{{ directory }}</b>{% endif %}
+
+    {% endfor %}
+    </div>
+
 {% for obj in tree %}
-    <a href="/{{ repo }}/{{ obj.type }}/{{ treeName }}/{{ obj.name }}">{{ obj.name }}</a>
+    <a href="/{{ repoName }}/{{ obj.type }}/{{ treeName }}/{{ obj.name }}">{{ obj.name }}{% if obj.type == 'tree' %}/{% endif %}</a>
     <br>
 {% endfor %}
-</body>
-</html>
+{% endblock %}

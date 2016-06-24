@@ -1,28 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Gitdjan | Homepage</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-<form method="post" action="">
-    {% csrf_token %}
-    {{ createf.as_p }}
-    <input type="submit" value="Create">
-</form>
+{% block title %}0r1gamic{% endblock %}
 
-<br><br>
-<b>{{ response|safe }}</b>
+{% block content %}
+    {% if login == 1 %}
+        <b>Your Repositories:<br></b>
+        {% for repo in repos %}
+            <a href="/{{ repo.name }}">{{ repo.name }}</a><br>
+        {% endfor %}
+    {% endif %}
 
-<br><br>
-<b>Your Repositories:<br></b>
-{% for repo in repos %}
-<a href="/{{ repo.name }}">{{ repo.name }}</a><br>
-{% endfor %}
+            <center>
+                <h1>Gitdjan</h1>
+                Web Interface to own git server with django<br>
+                Coded by 0r1gamic developerZ - <a href="http://ahmetkotan.com.tr">ahmetkotan.com.tr</a><br><br>
+                Requirements, installation and more; <a href="https://github.com/ahmetkotan/Gitdjan">ahmetkotan@github.com/Gitdjan</a>
+            </center>
 
-<br><br>
-<a href="/logout">Logout</a>
 
-</body>
-</html>
+{% endblock %}

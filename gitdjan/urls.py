@@ -22,7 +22,9 @@ urlpatterns = [
     url(r'^$', views.homepage),
     url(r'^login/', views.login),
     url(r'^logout/', views.logout),
+    url(r'^create/', views.create),
     url(r'^(?P<repoName>.*)/blob/(?P<blob>.*)', views.blobG),
     url(r'^(?P<repoName>.*)/tree/(?P<treeName>.*)', views.treeG),
+    url(r'^(?P<repoName>.*)/settings/$', views.settings),
     url(r'^(?P<repoName>.*)/$', views.repositoryG),
 ]

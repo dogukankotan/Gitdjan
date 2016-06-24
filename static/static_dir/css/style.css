@@ -1,0 +1,82 @@
+@font-face {
+    src: url('../fonts/nimbusmono-regular.otf');
+    font-family: nimbus;
+}
+
+body{
+    margin: auto;
+    border-top: 5px solid #ffa800;
+    font-family: nimbus;
+}
+body a{
+    text-decoration: none;
+    color: black;
+}
+body a:hover{
+    color: #ffa800;
+}
+
+.head-bar{
+    height: 100px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.head-bar .logo{
+    line-height: 100px;
+    height: auto;
+    font-weight: bold;
+    font-size: 27px;
+    float: left;
+    text-align: left;
+    margin-left: 30px;
+}
+.head-bar .menu{
+    line-height: 100px;
+    text-align: right;
+    float: right;
+}
+.head-bar .menu a{
+    background-color: #ffa800;
+    opacity: 0.85;
+    /* background-color: rgba(255, 168, 0, 0.85); */
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    font-weight:bold;
+    margin-right: 10px;
+    color: white;
+}
+.head-bar .menu a:hover{
+    opacity: 1;
+}
+.head-bar .menu a.extra-menu{
+    background-color: #ff4a0f;
+}
+
+.content-area{
+    margin: auto;
+    width: 90%;
+    padding: 1%;
+}
+.content-area .repository-name{
+    font-weight: bold;
+    font-size: 21px;
+    float: left;
+}
+.content-area .repository-desc{
+    line-height: 25px;
+    font-size: 19px;
+}
+.content-area .repository-desc::before{
+    content: '|';
+}
+.content-area .repository-path{
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.content-area .object-list{
+    width: 100%;
+}
+
+
