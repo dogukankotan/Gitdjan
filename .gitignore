@@ -3,3 +3,4 @@ db.sqlite3
 *.pyc
 gitdjan/settings/local.py
 gits/*/
+static/static_root/admin/*
