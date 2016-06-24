@@ -27,17 +27,17 @@ def homepage(request):
     if cr.is_valid():
         repoName = cr.cleaned_data['repositoryName']
         repoDesc = cr.cleaned_data['repositoryDesc']
-        if name_check(repoName):
-            newRepository, created = Repository.objects.get_or_create(name=name_check(repoName),
+        namecheck = name_check(repoName)
+        if namecheck:
+            newRepository, created = Repository.objects.get_or_create(name=namecheck,
                                                                       description=repoDesc)
             if created:
-                git.init_repository('gits/%s' % (name_check(repoName)), bare=True)
                 newRepository.save()
                 response = u"""Git Repository created.<br>
                 >> git remote add origin %s@%s:%s/gits/%s"""%(SSH_UID,
                                                               gethostbyname(gethostname()),
                                                               getcwd(),
-                                                              name_check(repoName))
+                                                              namecheck)
             else:
                 response = "Repository name already exists."
         else:
