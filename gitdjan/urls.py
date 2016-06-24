@@ -19,9 +19,10 @@ import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^admin', admin.site.urls),
     url(r'^$', views.homepage),
+    url(r'^login/', views.login),
+    url(r'^logout/', views.logout),
     url(r'^(?P<repoName>.*)/blob/(?P<blob>.*)', views.blobG),
     url(r'^(?P<repoName>.*)/tree/(?P<treeName>.*)', views.treeG),
-    url(r'^(?P<repoName>.*)$', views.repositoryG),
+    url(r'^(?P<repoName>.*)/$', views.repositoryG),
 ]

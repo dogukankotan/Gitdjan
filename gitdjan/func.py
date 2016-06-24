@@ -2,6 +2,7 @@
 
 from re import escape
 
+
 def name_check(name):
     namex = escape(name)
     namex = namex.replace("\\-", "-")
@@ -13,5 +14,4 @@ def name_check(name):
         return name.lower()
     else:
         return False
-
 
